@@ -1,0 +1,54 @@
+14.04 Ubuntu dedi setup:
+
+1. Type: sudo apt-get update
+(checks the repo for the updates of the OS)
+
+2. Type: sudo apt-get upgrade
+(updates and clears mem etc)
+
+3. Type: sudo apt-get install lib32gcc1 libc6-i386
+(Allows us to run the 32-bit steam server, current server is 64 bit)
+
+4. Type: sudo adduser steam
+(Adds steam user, don't want to run steam on sudo user or root)
+pass:poopgroup
+
+5. Type: su steam
+   Type(for "Password:" prompt): poopgroup
+
+6. Navigate(using cd/ls) to home/steam
+   Type: mkdir steamcmd
+   Type: cd steamcmd
+
+7. Inside the steamcmd directory
+   Type: wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz
+   Type(to check if you got the download "steamcmd_linux.tar.gz" will be in dir): ls
+
+8. Type(to extract the files): tar -xzvf steamcmd_linux.tar.gz
+   *Optional* Type(to remove the tar): rm steamcmd_linux.tar.gz 
+
+9. Type: ./steamcmd.sh
+   (Installs and updates steamcmd console. Launches the program and you should see "Steam>")
+
+10. Type("Steam>" prompt): login anonymous
+   (Logs into the steam services anonymously)
+
+11. Type(To specify directory as "tf2"): force_install_dir ./tf2/
+    Type(to actually dl the server): app_update 232250 validate
+    (This is the dedi server app ID [https://steamdb.info/app/232250/] )
+    ("validate" will validate the download of the app)
+
+12. Type(to quit the steam console): quit
+    Type(to check the tf2 folder): ls
+    *Optional* Navigate: to the tf2/tf/cfg/ (this is where the custom config happens)
+    *Optional* Type: pico server.cfg ( this creates a .cfg file where custom server commands can be edited)
+    *Optional* cp motd_default.txt motd.txt (copies and renames the file for 
+    message of the day)
+    *Optional* Type: pico motd.txt (edit the file for whatever)
+
+13. Navigate: to /tf2/
+    Type: ./srcds_run -game tf +sv_pure 1 +map ctf_2fort.bsp +maxplayers 4
+    (starts server with arguments, type quit to end)
+    Port: 27000-27040
+
+14. ifconfig same as ipconfig. 

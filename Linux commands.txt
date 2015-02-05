@@ -1,0 +1,12 @@
+sudo shutdown -h now or sudo poweroff
+pkill(need root) - kill process by name
+	Example: pkill -KILL -u steam
+	Warning: Don't kill root or system processes 
+
+kill(need root) - terminate or signal a process
+
+logout - logout of a login shell(username).
+
+who - checks whos signed on the server
+	Alt: w
+	

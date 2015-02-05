@@ -1,0 +1,39 @@
+Creates a session that won't interrupt upon the user disconnecting from the server.
+
+This uses the app screen for ubuntu.
+
+Installation:
+
+1. Type: apt-get install screen
+(installs the app)
+
+2. Type: screen to run it
+
+
+Operation:
+
+1. Type: screen
+   (Press space for command prompt)
+
+2. Command overview:
+   Ctrl + a + "input" distinguishes these from normal commands
+   
+   Ctrl + a + c - Create a new screen session to use more than one at the same time.
+   Ctrl + a + n - Switches to the next screen session(if you use more than one)
+   Ctrl + a + p - Switches to the previous screen session (if you use more than one)
+   Ctrl + a + d - Detaches a screen session ( without killing the processes in it)
+   top - command displays processor activity of your Linux box and also displays 
+         tasks managed by kernel in real-time. It'll show processor and memory are 
+         being used and other information like running processes.
+   screen -ls  - gets a list of your current screen sessions
+   screen -r "screen process name"  - reconnects to a screen session.
+   exit - closes the screen session
+   man screen - learn more about screen
+
+3. Errors: Cannot open your terminal '/dev/pts/0' - please check.
+   Explanation: this is because (you) initiated the current terminal - you probably
+   did a sudo su into the user you are not trying to run screen as.
+   
+   Solution: Sign out and properly connect as the user you wish to use.
+   OR 
+   Run script /dev/null to own the shell. Try screen again.
