@@ -1,0 +1,19 @@
+Base tools to help us program the plugin for TF2. Metamod is needed to run Sourcemod.
+Using Sourcemod we will create the necessary plugins and extensions to transfer data
+to our music algorithm.
+
+1. Navigate: to /steam/steamcmd/tf2/tf
+   Type: wget http://cdn.probablyaserver.com/sourcemod/mmsource-1.10.4-linux.tar.gz
+
+2. Type: tar -xvf mmsource-1.10.4-linux.tar.gz
+   (extracts metamod and creates addons folder in the tf2 folder)	
+
+3. Navigate to /steam/steamcmd/tf2/tf/addons
+   Type: wget http://sourcemod.gameconnect.net/files/sourcemod-1.7.0-linux.tar.gz
+
+4. Type: tar -xvf sourcemod-1.7.0-linux.tar.gz
+   (extracts sourcemod in the addons folder)
+
+5. Directories of ~/steamcmd/tf2/tf/addons/sourcemod/plugins
+              AND ~/steamcmd/tf2/tf/addons/sourcemod/extensions 
+   are what we are going to be using a lot.
