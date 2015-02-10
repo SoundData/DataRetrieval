@@ -9,12 +9,7 @@
 3. Type: sudo apt-get install lib32gcc1 libc6-i386
 (Allows us to run the 32-bit steam server, current server is 64 bit)
 
-4. Type: sudo adduser steam
-(Adds steam user, don't want to run steam on sudo user or root)
-pass:poopgroup
-
-5. Type: su steam
-   Type(for "Password:" prompt): poopgroup
+4. Create: new user type for the steam installation.
 
 6. Navigate(using cd/ls) to home/steam
    Type: mkdir steamcmd
