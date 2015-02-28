@@ -1,0 +1,36 @@
+1. User was promoted to sudo user and now able to install system files.
+
+2. installed git using sudo apt-get install make
+
+3. installed gcc using sudo apt-get install gcc and g++
+
+4. cloned the git sourcemod repo into the steamcmd/tf2/tf/addons
+
+5. cloned our MessageBroadcastExtension into the steamcmd/tf2/tf/addons/sourcemod/
+public/sample_ext and then moved the files up replacing and merging.
+
+6. sudo apt-get install libc6-dev-i386 //fixes one of the extension compilation errors
+( i believe it was #include <sys/"something">
+
+7. sudo apt-get install gcc-4.9-multilib g++-4.9-multilib //Fixes another error 
+(This one was #include <bits/c++config.h>)
+
+8.Solved:
+
+extension.cpp: In function ‘cell_t TellClientAbout(SourcePawn::IPluginContext*, const cell_t*)’:
+extension.cpp:64:60: error: ‘strnlen_s’ was not declared in this scope
+  const size_t strSz = strnlen_s(eventInfo, MAX_MESSAGE_SIZE);
+
+
+strlen subbed for the strnlen_s. strnlen_s is specific to microsoft systems, won't
+compile on linux/OSX
+
+
+9. Current error:
+In file included from extension.h:41:0,
+                 from extension.cpp:32:
+/usr/include/zmq.hpp: In function ‘int zmq::poll(zmq_pollitem_t*, int, long int)’:
+/usr/include/zmq.hpp:102:28: error: exception handling disabled, use -fexceptions to enable
+             throw error_t ();
+
+

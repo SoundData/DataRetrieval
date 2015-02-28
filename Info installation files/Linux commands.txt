@@ -10,3 +10,20 @@ logout - logout of a login shell(username).
 who - checks whos signed on the server
 	Alt: w
 	
+rsync -a <directory> <another directory> - merge directories
+
+mv <directory> <another directory> - move files (../ moves one dir up)
+
+Disk cleanup:
+	sudo apt-get update
+
+
+	sudo apt-get autoremove
+
+
+	sudo apt-get autoclean
+
+or instead of autoclean
+
+	sudo apt-get clean
+
